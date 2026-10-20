@@ -1,0 +1,34 @@
+"""Finally, include a short write-up, in final.txt, with:
+A description of your game, how to play, how your AI plays (including its strategies and heuristics), and how it went overall.
+The results (what works! what you did!).
+The most difficult parts—and what you'd work on if there were more time...
+
+this is minesweeper. calling hostGame will randomly generate a board with your proportions and the designated number of hidden bombs
+if you open a slot, if it is not a bomb, then it will show the number of bombs around it (including diagonals), for a maximum of eight
+however, if the slot you open is a bomb, you lose
+you win when you either mark every bomb or open every safe slot
+press c to change your state between opening slots and marking bombs
+inputting the coordinates of an already opened safe slot in either state may open all the remaining spots around it if the right number of bombs have been flagged
+there is a timer and somewhat broken move counter
+there is no bomb counter
+the aesthetics are off once the indices are in double digits
+you can almost choose between 3 different fonts, but they're all hard to read except the default
+
+
+press command + option + plus to zoom in on the console, trust me
+I suggest making boards that are 20 percent bombs, such as 4,4,3 or 8,8,13 or 10,10,20
+btw my current best record for 4,4,3 is 7 seconds, for 8,8,13 it's 37 seconds, for 10,10,20 it's 1:55 minutes, and for 18,30,99, it's 14:30 minutes
+maybe the real AI was the font selection we made along the way
+
+basically the smarter AI (press a) will take the best chances of guessing to avoid 1 bomb in at least 4 possible places.
+otherwise, it gets stuck, and passes play back to the user
+but if it's called upon even while its stuck, it will take any guess it has with a 50% chance or better
+without any human input, in a 10,10,20 game this has an astounding win rate of 7 out of 50 (14%), getting stuck 3 times (6%)
+for contrast, playing 10,10,20 by myself, I win about 5/8 (63%)
+meanwhile, the dumber AI (press b) is just a convenience filler that will mark all remaining bombs around a slot if there are exactly that many spaces left
+altogether, both AI's are much more useful as tools for the human user. to help your own speed, play and press b every once in a while to avoid doing redundant coordinate searching
+meanwhile, you can also start the first couple slots and mark some bombs, then keep pressing a until you win
+in a way, the "b" AI is like automation, while the "a" AI is like chatGPT
+
+call hostGame to start. try: hostGame(8,8,13)
+"""
